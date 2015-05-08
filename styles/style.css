@@ -1,0 +1,44 @@
+html {
+	font-size: 10px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+	width: 600px;
+	margin: 0;
+	padding: 0 20px 20px 20px;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 60px;
+	margin: 0 auto;
+	padding: 20px 0;
+	text-align: center;
+}
+
+h2 {
+	font-size: 24px;
+	text-align: center;
+}
+
+p, li {
+	font-size: 16px;
+	line-height: 2;
+	letter-spacing: 1px;
+}
+
+
+#mainImage {
+    width:350px;
+    height:auto;
+}
+
+#blueParagraph {
+	color: blue;
+	width: 500px;
+}
