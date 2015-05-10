@@ -52,9 +52,7 @@ thoughtsBlurb.innerHTML = "<strong>Some Thoughts:</strong><br>"
 
 // Blue Paragraph!
 blueParagraph = document.getElementById('blueParagraph');
-blueParagraph.innerHTML = "This is my blue paragraph and it is quite content being blue. Aren you content, blue paragraph?<br>"
-	+ "<i> Woof! - </i><br>"
-	+ "- See? Quite content indeed.</p>";
+blueParagraph.innerHTML = "This is my blue paragraph and it is very, very happy.";
 
 
 // ###
