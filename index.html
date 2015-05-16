@@ -1,25 +1,42 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
+	<!-- the HEAD section contains meta-data about the webpage -->
 	<head>
-		<meta charset="utf-8">
+		<!-- character set; determines the characters that your site can display -->
+		<meta charset="UTF-8">
+
+		<!-- create a redirect to another page after 3 seconds -->
+		<meta http-equiv="refresh" content="3; url=redirect.html".
+
+		<!-- page title -->
 		<title>XPCoffee</title>
+
+		<!-- link to the font the page will use -->
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+		<!-- link to the CSS file that determines the styles of the page -->
 		<link href="styles/style.css" rel="stylesheet" type="text/css">
 	</head>
+
+	<!-- the BODY section holds the stuff that's actually displayed on the page -->
+	<!-- 	In this case, I haven't put in any actual content, only empty headers and paragraphs. the content is filled in by JavaScript.
+			I don't know if this is correct, but I wanted to separate layout and content. -->
 	<body>
 		<h1 id="mainHeader"></h1>
 		<h2 id="greetHeader"></h2>
 		<img id="mainImage" alt="xpcoffee-logo">
+
+		<!-- static content -->
 		<p id="welcomeBlurb"></p>
 		<p id="descBlurb"></p>
 		<p id="doneBlurb"></p>
 		<p id="thoughtsBlurb"></p>
 		<p id="blueParagraph"></p>
 
-
+		<!-- button to change the user -->
 		<button id="changeUserButton">Change user</button>
 
-		<!-- SCRIPTING -->
+		<!-- JavaScripts -->
 		<script src="scripts/images.js"></script>
 		<script src="scripts/bodytext.js"></script>
 		<script src="scripts/authentication.js"></script>
