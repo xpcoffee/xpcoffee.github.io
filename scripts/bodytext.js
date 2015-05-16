@@ -36,10 +36,32 @@ doneArray = [
 	"<i>JavaScript</i>",
 	[
 		"function that turns JS arrays into ULs",
-		"it handles nested ULs (yay!)"
-	]
+		" as you can see, it handles nested unsorted lists",
+		"I've placed the code below"
+	],
+	"started some HTML5 also"
 ];
 createULFromArray(doneBlurb, doneArray);
+codeBlurb = document.getElementById('codeBlurb');
+codeBlurb.innerHTML = '<pre>
+<code>
+function createULFromArray(previousElement, array) {
+	var ul = document.createElement("ul");
+	for (i in array) {
+		var element = array[i];
+		var li = document.createElement("li");
+		if(Array.isArray(element)) {
+			createULFromArray(ul.lastChild, element);
+		} else {
+			li.innerHTML = element;
+			ul.appendChild(li);
+		}
+	}
+	previousElement.parentNode.insertBefore(ul, previousElement.nextSibling);
+}
+</code>
+</pre>';
+
 
 // Thoughts
 thoughtsBlurb = document.getElementById('thoughtsBlurb');
@@ -53,6 +75,10 @@ thoughtsBlurb.innerHTML = "<strong>Some Thoughts:</strong><br>"
 // Blue Paragraph!
 blueParagraph = document.getElementById('blueParagraph');
 blueParagraph.innerHTML = "This is my blue paragraph and it is very, very happy.";
+
+// Contact
+blueParagraph = document.getElementById('contact');
+blueParagraph.innerHTML = "email: <a href=\"mailto:xpcdev@gmail.com\">xpcdev@gmail.com></a>";
 
 
 // ###
