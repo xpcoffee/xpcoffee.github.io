@@ -5,8 +5,9 @@
 		<!-- character set; determines the characters that your site can display -->
 		<meta charset="UTF-8">
 
-		<!-- create a redirect to another page after 3 seconds -->
+		<!-- create a redirect to another page after 3 seconds 
 		<meta http-equiv="refresh" content="3; url=redirect.html">
+		-->
 
 		<!-- page description -->
 		<!-- description max 200 characters -->
@@ -28,31 +29,111 @@
 
 		<!-- link to the CSS file that determines the styles of the page -->
 		<link href="styles/style.css" rel="stylesheet" type="text/css">
+
+		<!-- Setup JavaScripts -->
+		<script src="scripts/listHelper.js"></script>
 	</head>
 
 	<!-- the BODY section holds the stuff that's actually displayed on the page -->
 	<!-- 	In this case, I haven't put in any actual content, only empty headers and paragraphs. the content is filled in by JavaScript.
 			I don't know if this is correct, but I wanted to separate layout and content. -->
 	<body>
-		<h1 id="mainHeader"></h1>
-		<h2 id="greetHeader"></h2>
+		<h1 id="mainHeader">First Website</h1>
+		<h2 id="greetHeader">Hello World!</h2>
 		<img id="mainImage" alt="xpcoffee-logo">
-
-		<!-- static content -->
-		<p id="welcomeBlurb"></p>
-		<p id="descBlurb"></p>
-		<p id="doneBlurb"></p>
-		<p id="codeBlurb"></p>
-		<p id="thoughtsBlurb"></p>
-		<p id="blueParagraph"></p>
-		<p id="contact"></p>
 
 		<!-- button to change the user -->
 		<button id="changeUserButton">Change user</button>
 
-		<!-- JavaScripts -->
+		<!-- Welcome -->
+		<section>
+			<p>
+				Welcome to my personal site.<br>
+				If you're not me, I'm not entirely sure what you're expecting to get out of this... bey <i>hey!</i> Welcome!
+			</p>
+		</section>
+
+		<!-- Description -->
+		<section>
+			<p>
+				<strong>What is this?</strong><br>
+				I'm busy learning to make an website.
+				This will mostly be full of borken things. There will be bad grammar. There will be outdated codeses.
+				There is also a ninja, but he doesn't say much. He just judges people.
+			</p>
+		</section>
+
+		<!-- What I've Done -->
+		<section>
+			<p id="doneBlurb">
+				<strong>What I've done so far:</strong>
+			</p>
+
+			 <pre>
+				 <code>
+ function createULFromArray(previousElement, array) {
+ 	var ul = document.createElement("ul");
+ 	for (i in array) {
+ 		var element = array[i];
+ 		var li = document.createElement("li");
+ 		if(Array.isArray(element)) {
+ 			createULFromArray(ul.lastChild, element);
+ 		} else {
+ 			li.innerHTML = element;
+ 			ul.appendChild(li);
+ 		}
+ 	}
+ 	previousElement.parentNode.insertBefore(ul, previousElement.nextSibling);
+ }
+				 </code>
+			 </pre>
+
+			 <script type="text/javascript">
+				doneArray = [
+					"images", 
+					"headings", 
+					"unordered lists", 
+					"links", 
+					"teeny bit of CSS",
+					"started HTML5",
+					"<i>JavaScript</i>",
+					[
+						"function that turns JS arrays into ULs",
+						" as you can see, it handles nested unsorted lists",
+						"I've placed the code below"
+					]
+				];
+
+				createULFromArray(doneBlurb, doneArray);
+			</script> 
+		</section>
+
+		<!-- Thoughts -->
+		<section>
+			<p>
+				<strong>Some Thoughts:</strong><br>
+				In the future, I'll probably make JS parse text files.<br>
+				This will allow me to simply type in simple text files, specify where I want them placed in HTML, and JS does the mapping.<br>
+				All of this for readability and easy editing capabilities
+			</p>
+		</section>
+
+		<!-- Blue Paragraph -->
+		<section>
+			<p id="blueParagraph">
+				This is my blue paragraph and it is very, very happy.
+			</p>
+		</section>
+
+		<!-- End JavaScript -->
 		<script src="scripts/images.js"></script>
-		<script src="scripts/bodytext.js"></script>
 		<script src="scripts/authentication.js"></script>
 	</body>
+
+	<footer>
+		<!-- Contact Details -->
+		<p>
+			contactBlurb.innerHTML = "email: <a href=\"mailto:xpcdev@gmail.com\">xpcdev@gmail.com</a>";
+		</p>
+	</footer>
 </html>
