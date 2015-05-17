@@ -35,19 +35,21 @@
 	</head>
 
 	<header>
-		<h1 id="mainHeader">First Website</h1>
-
-		<h2 id="greetHeader">Hello World!</h2>
+		<img id="banner" alt="XPCBanner" src="http://googledrive.com/host/0B4GZge00aT8VUDRwelB3c0tmd2s/XPCBanner.png">
+		<section id="underBanner">
+			<h2 id="greetHeader">Hello World! </h2>
+			<button id="changeUserButton">Change user</button>
+		</section>
+		<h1 id="mainHeader">Hello World!</h1>
 	</header>
 
 	<!-- the BODY section holds the stuff that's actually displayed on the page -->
 	<!-- 	In this case, I haven't put in any actual content, only empty headers and paragraphs. the content is filled in by JavaScript.
 			I don't know if this is correct, but I wanted to separate layout and content. -->
 	<body>
-		<img id="mainImage" alt="xpcoffee-logo">
+		<img id="mainImage" alt="mainImage">
 
 		<!-- button to change the user -->
-		<button id="changeUserButton">Change user</button>
 
 		<!-- Welcome -->
 		<section>
@@ -63,7 +65,7 @@
 				<strong>What is this?</strong><br>
 				I'm busy learning to make an website.
 				This will mostly be full of borken things. There will be bad grammar. There will be outdated codeses.
-				There is also a ninja, but he doesn't say much. He just judges people.
+				There is also a <a id="ninjaTag" href="javascript:showNinja();">ninja</a>, but he doesn't say much. He just judges people.
 			</p>
 		</section>
 
@@ -128,8 +130,8 @@
 		</section>
 
 		<!-- End JavaScript -->
-		<script src="scripts/images.js"></script>
 		<script src="scripts/authentication.js"></script>
+		<script src="scripts/images.js"></script>
 	</body>
 
 	<footer>

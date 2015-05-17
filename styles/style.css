@@ -21,7 +21,7 @@ img {
 
 button {
 	display: block;
-	margin: 0 auto;
+	margin: 0px auto;
 }
 
 header {
@@ -52,11 +52,18 @@ p, li {
 	letter-spacing: 1px;
 }
 
-
-
 #mainImage {
     width:350px;
     height:auto;
+}
+
+#banner {
+	margin: 0px 0px;
+}
+
+#underBanner {
+	background-color: black;
+	padding: 0px 0px 10px 0px;
 }
 
 #blueParagraph {
@@ -68,5 +75,10 @@ p, li {
 	background: black;
 	color: white; 
 	padding: 10px 10px 10px 10px;
+}
+
+#ninjaTag {
+	color: inherit;
+	text-decoration: inherit;
 }
 

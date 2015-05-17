@@ -15,6 +15,7 @@ if(!localStorage.getItem('name')) {
 } else {
 	var storedName = localStorage.getItem('name');
 	myHeading.innerHTML = 'Hello, ' + storedName + '. Welcome back!';
+	myButton.innerHTML = 'But I\'m not ' + storedName + '!';
 }
 
 
@@ -37,4 +38,3 @@ function setUserName() {
 	localStorage.setItem('name', myName);
 	myHeading.innerHTML = 'Hello, ' + myName + '. Welcome!';
 }
-
