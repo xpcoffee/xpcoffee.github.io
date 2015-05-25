@@ -1,99 +1,111 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<!-- the HEAD section contains meta-data about the webpage -->
+	<!-- HEAD:
+			section contains meta-data about the webpage
+			not to be confused with HEADER (see below) -->
 	<head>
+		<!-- Basics
+		================================================== -->
 		<!-- character set; determines the characters that your site can display -->
 		<meta charset="UTF-8">
 
-		<!-- create a redirect to another page after 3 seconds 
-		<meta http-equiv="refresh" content="3; url=redirect.html">
-		-->
-
-		<!-- page description -->
-		<!-- description max 200 characters -->
+		<!-- page description:
+				description max 200 characters -->
 		<meta name="description" content="XPCoffee personal webpage. I'm using this to learn how to muck about with webpages.">
 
-		<!-- keywords to help search engines find and class the webpage-->
-		<!-- keywords max 1000 characters -->
+		<!-- page keywords:
+				keywords to help search engines find and class the webpage
+				keywords max 1000 characters -->
 		<meta name="keywords" content="html5 doctype,XPCoffee,xpcdev">
 
-		<!-- search engine indexing -->
-		<!-- index/noindex | follow/nofollow (whether to follow hyperlinks and index those too) -->
+		<!-- search engine indexing:
+				index/noindex (whether search engines will index this page)
+				follow/nofollow (whether to follow hyperlinks and index those too) -->
 		<meta name="robots" content="index,follow">
 
-		<!-- page title -->
+		<!-- page title:
+				self explanatory -->
 		<title>XPCoffee</title>
 
-		<!-- link to the font the page will use -->
+		<!-- fonts:
+				link to local or online sources - Google has some good ones -->
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
-		<!-- link to the CSS file that determines the styles of the page -->
+		<!-- CSS:
+				link to local or online sources - these determine the look of your pages -->
+	    <link href="third-party/css/bootstrap.min.css" rel="stylesheet">
 		<link href="styles/style.css" rel="stylesheet" type="text/css">
 
-		<!-- Setup JavaScripts -->
+		<!-- Bootstrap:
+				Bootstrap is a library of CSS and JavaScript made by Twitter.
+				It's one of the most used styling libraries and contains some
+				really nifty stuff.	-->
+
+		<!-- JavaScript Header
+		================================================== -->
 		<script src="scripts/listHelper.js"></script>
+
 	</head>
 
+	<!-- HEADER
+	==================================================
+		section holds content displayed at the top of the page. 
+		do not confuse with HEAD (see above) -->
 	<header>
-		<img id="banner" alt="XPCBanner" src="http://googledrive.com/host/0B4GZge00aT8VUDRwelB3c0tmd2s/XPCBanner.png">
-		<section id="underBanner">
-			<h2 id="greetHeader">Hello World! </h2>
-			<button id="changeUserButton">Change user</button>
-		</section>
-		<h1 id="mainHeader">Hello World!</h1>
+		<!-- nav bar -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+		    <div class="container">
+		      <div class="navbar-header">
+		        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		          <span class="sr-only">Toggle navigation</span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		          <span class="icon-bar"></span>
+		        </button>
+		        <a id="userBanner" class="navbar-brand" href="javascript:setUserName();">Hello World!</a>
+		      </div>
+		      <div id="navbar" class="collapse navbar-collapse">
+		        <ul class="nav navbar-nav">
+		          <li class="active"><a href="#">Home</a></li>
+		          <li><a href="#about">About</a></li>
+		          <li><a href="#contact">Contact</a></li>
+		        </ul>
+		      </div><!--/.nav-collapse -->
+		    </div>
+    	</nav>
+    	<!-- banner image -->
+		<img id="bannerImage" alt="XPCBanner" src="http://googledrive.com/host/0B4GZge00aT8VUDRwelB3c0tmd2s/XPCBanner.png">
 	</header>
 
-	<!-- the BODY section holds the stuff that's actually displayed on the page -->
-	<!-- 	In this case, I haven't put in any actual content, only empty headers and paragraphs. the content is filled in by JavaScript.
+	<!-- BODY
+	==================================================
+			section holds the stuff that's actually displayed on the page
+	 		In this case, I haven't put in any actual content, only empty headers and paragraphs. the content is filled in by JavaScript.
 			I don't know if this is correct, but I wanted to separate layout and content. -->
 	<body>
 		<img id="mainImage" alt="mainImage">
 
-		<!-- button to change the user -->
-
-		<!-- Welcome -->
+		<!-- WELCOME TEXT -->
 		<section>
-			<p>
-				Welcome to my personal site.<br>
-				If you're not me, I'm not entirely sure what you're expecting to get out of this... bey <i>hey!</i> Welcome!
-			</p>
+			<div class="float-text"> 
+				<p>Welcome to my personal site.<br> If you're not me, I'm not entirely sure what you're expecting to get out of this... bey <i>hey!</i> Welcome!</p>
+			</div>
 		</section>
 
-		<!-- Description -->
+		<!-- DESCRIPTION -->
 		<section>
-			<p>
-				<strong>What is this?</strong><br>
-				I'm busy learning to make an website.
-				This will mostly be full of borken things. There will be bad grammar. There will be outdated codeses.
-				There is also a <a id="ninjaTag" href="javascript:showNinja();">ninja</a>, but he doesn't say much. He just judges people.
-			</p>
+			<div class="blurb">
+				<h2>What is this?</h2>
+				<p> I'm busy learning to make an website. This will mostly be full of borken things. There will be bad grammar. There will be outdated codeses. There is also a <a id="ninjaTag" href="javascript:showNinja();">ninja</a>, but he doesn't say much. He just judges people.</p>
+			</div>
 		</section>
 
-		<!-- What I've Done -->
+		<!-- THINGS DONE -->
 		<section>
-			<p id="doneBlurb">
-				<strong>What I've done so far:</strong>
-			</p>
-
-			 <pre>
-				 <code>
- function createULFromArray(previousElement, array) {
- 	var ul = document.createElement("ul");
- 	for (i in array) {
- 		var element = array[i];
- 		var li = document.createElement("li");
- 		if(Array.isArray(element)) {
- 			createULFromArray(ul.lastChild, element);
- 		} else {
- 			li.innerHTML = element;
- 			ul.appendChild(li);
- 		}
- 	}
- 	previousElement.parentNode.insertBefore(ul, previousElement.nextSibling);
- }
-				 </code>
-			 </pre>
-
+			<div class="blurb">
+				<h2>What I've done so far:</h2>
+				<p id="doneBlurb"></p>
+			</div>
 			 <script type="text/javascript">
 				doneArray = [
 					"images", 
@@ -109,33 +121,58 @@
 						"I've placed the code below"
 					]
 				];
-
 				createULFromArray(doneBlurb, doneArray);
 			</script> 
 		</section>
 
-		<!-- Thoughts -->
+		<!-- JAVASCRIPT SHOWCASE -->
 		<section>
-			<p>
-				<strong>Some Thoughts:</strong><br>
-				I have no thoughts at the moment.
-			</p>
+			<h2>JavaScript</h2>
+			<pre><code>
+function createULFromArray(previousElement, array) {
+	var ul = document.createElement("ul");
+	for (i in array) {
+		var element = array[i];
+		var li = document.createElement("li");
+		if(Array.isArray(element)) {
+			createULFromArray(ul.lastChild, element);
+		} else {
+			li.innerHTML = element;
+			ul.appendChild(li);
+		}
+	}
+	previousElement.parentNode.insertBefore(ul, previousElement.nextSibling);
+}
+			</code></pre>
+		</section>
+		<section>
+			<div class="float-text">
+				<p id="blueParagraph"> This is my blue paragraph and it is very, very happy.</p>
+			</div>
 		</section>
 
-		<!-- Blue Paragraph -->
-		<section>
-			<p id="blueParagraph">
-				This is my blue paragraph and it is very, very happy.
-			</p>
-		</section>
-
-		<!-- End JavaScript -->
+		<!-- JavaScript Footer
+		================================================== -->
 		<script src="scripts/authentication.js"></script>
 		<script src="scripts/images.js"></script>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	    <script src="third-party/javascript/bootstrap.min.js"></script>
+	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	    <script src="third-party/javascript/ie10-viewport-bug-workaround.js"></script>
+
 	</body>
 
-	<footer>
+	<!-- FOOTER
+	==================================================
+			contains information displayed at the bottom of the page -->
+	<footer class="footer">
 		<!-- Contact Details -->
-		<address>xpcdev@gmail.com</address>
+			<div class="blurb">
+				<span><a class="line-header">Some Thoughts:</a> <a>I have no thoughts at the moment.</a> <address>xpcdev@gmail.com</address> </span>
+			</div>
 	</footer>
 </html>

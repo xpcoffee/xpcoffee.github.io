@@ -1,3 +1,5 @@
+/*tags*/
+
 html {
 	font-size: 10px;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -6,32 +8,29 @@ html {
 body {
 	width: auto;
 	min-width: 600px;
-	margin: 0;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+section {
+	font-size: 16px;
+	line-height: 2;
+	letter-spacing: 1px;
 	padding: 0 20px 20px 20px;
 }
 
+pre {
+	max-width: 800px;
+	margin: 0px auto;
+}
 code {
 	font-size: initial;
+	margin: 10px auto;
 }
 
 img {
 	display: block;
 	margin: 0 auto;
-}
-
-button {
-	display: block;
-	margin: 0px auto;
-}
-
-header {
-	padding: 0px 0px 0px 0px;
-}
-
-footer {
-	background: black;
-	color: white; 
-	padding: 10px 10px 10px 10px;
 }
 
 h1 {
@@ -46,39 +45,47 @@ h2 {
 	text-align: center;
 }
 
-p, li {
-	font-size: 16px;
-	line-height: 2;
-	letter-spacing: 1px;
+/*classes*/
+
+.blurb {
+	max-width: 600px;
+	margin: 20px auto;
 }
+
+.float-text {
+	max-width: 800px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.footer {
+	background: black;
+	color: white; 
+	position: fixed;
+	bottom: 0;
+	/* Set the fixed height of the footer here */
+	height: 60px;
+	width: 100%;
+}
+
+/*elements*/
 
 #mainImage {
     width:350px;
     height:auto;
 }
 
-#banner {
-	margin: 0px 0px;
-}
-
-#underBanner {
-	background-color: black;
-	padding: 0px 0px 10px 0px;
+#bannerImage {
+	margin: 0px auto;
 }
 
 #blueParagraph {
 	color: blue;
-	width: 500px;
-}
-
-#greetHeader {
-	background: black;
-	color: white; 
-	padding: 10px 10px 10px 10px;
 }
 
 #ninjaTag {
 	color: inherit;
 	text-decoration: inherit;
 }
+
 
