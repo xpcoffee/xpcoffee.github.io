@@ -30,10 +30,12 @@
 		<!-- fonts:
 				link to local or online sources - Google has some good ones -->
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 
 		<!-- CSS:
 				link to local or online sources - these determine the look of your pages -->
 	    <link href="third-party/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="third-party/css/prism.css" rel="stylesheet">
 		<link href="styles/style.css" rel="stylesheet" type="text/css">
 
 		<!-- Bootstrap:
@@ -44,7 +46,6 @@
 		<!-- JavaScript Header
 		================================================== -->
 		<script src="scripts/listHelper.js"></script>
-
 	</head>
 
 	<!-- HEADER
@@ -53,7 +54,7 @@
 		do not confuse with HEAD (see above) -->
 	<header>
 		<!-- nav bar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse navbar-top">
 		    <div class="container">
 		      <div class="navbar-header">
 		        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -73,8 +74,6 @@
 		      </div><!--/.nav-collapse -->
 		    </div>
     	</nav>
-    	<!-- banner image -->
-		<img id="bannerImage" alt="XPCBanner" src="http://googledrive.com/host/0B4GZge00aT8VUDRwelB3c0tmd2s/XPCBanner.png">
 	</header>
 
 	<!-- BODY
@@ -83,84 +82,102 @@
 	 		In this case, I haven't put in any actual content, only empty headers and paragraphs. the content is filled in by JavaScript.
 			I don't know if this is correct, but I wanted to separate layout and content. -->
 	<body>
-		<img id="mainImage" alt="mainImage">
+		<section class="pagelet">
+	    	<!-- TOP IMAGES -->
+			<img id="bannerImage" alt="XPCBanner" src="http://googledrive.com/host/0B4GZge00aT8VUDRwelB3c0tmd2s/XPCBanner.png">
+			<img id="mainImage" alt="mainImage">
 
-		<!-- WELCOME TEXT -->
-		<section>
-			<div class="float-text"> 
-				<p>Welcome to my personal site.<br> If you're not me, I'm not entirely sure what you're expecting to get out of this... bey <i>hey!</i> Welcome!</p>
-			</div>
-		</section>
+			<!-- WELCOME TEXT -->
+			<p class="float-text">Welcome to my personal site.<br> If you're not me, I'm not entirely sure what you're expecting to get out of this... bey <i>hey!</i> Welcome!</p>
 
-		<!-- DESCRIPTION -->
-		<section>
+			<!-- DESCRIPTION -->
 			<div class="blurb">
 				<h2>What is this?</h2>
 				<p> I'm busy learning to make an website. This will mostly be full of borken things. There will be bad grammar. There will be outdated codeses. There is also a <a id="ninjaTag" href="javascript:showNinja();">ninja</a>, but he doesn't say much. He just judges people.</p>
 			</div>
 		</section>
+		<section class="pagelet">
+			<!-- THINGS DONE -->
+			<h2>Filler Content</h2>
+			<p class="float-text">Here's some of my content to fill space and time.<p>
 
-		<!-- THINGS DONE -->
-		<section>
-			<div class="blurb">
-				<h2>What I've done so far:</h2>
-				<p id="doneBlurb"></p>
-			</div>
-			 <script type="text/javascript">
-				doneArray = [
-					"images", 
-					"headings", 
-					"unordered lists", 
-					"links", 
-					"teeny bit of CSS",
-					"started HTML5",
-					"<i>JavaScript</i>",
-					[
-						"function that turns JS arrays into ULs",
-						" as you can see, it handles nested unsorted lists",
-						"I've placed the code below"
-					]
-				];
-				createULFromArray(doneBlurb, doneArray);
-			</script> 
-		</section>
+			<!-- JS Array to HTML List -->
+			<div class="done-container">
+				<div class="blurb">
+					<h3>JavaScript Array to HTML List</h3>
+					<p>The following functions take an JavaScript array and create either a UL or OL from it. These functions are able to handle nested lists; however, nested lists will be of the same type.</p>
+					<p id="doneBlurb"><b>Example:</b></p>
+					<p ><b>Code:</b></p>
+				</div>
+				 <script type="text/javascript"> doneArray = ["foo", "bar", "baz", "<i>tes-style</i>", ["fus", "roh", "dah!"] ]; createULFromArray(doneBlurb, doneArray); </script>
+				<pre><code class="language-javascript">
+/*
+ * Author:  Rick Bosch
+ * email:   xpc.dev@gmail.com 
+ */
 
-		<!-- JAVASCRIPT SHOWCASE -->
-		<section>
-			<h2>JavaScript</h2>
-			<pre><code>
+/*
+ * Creates HTML unordered list from an array, places it after "previous element"
+ */
 function createULFromArray(previousElement, array) {
-	var ul = document.createElement("ul");
+	createListFromArray(previousElement, array, "ul");
+}
+
+/*
+ * Creates HTML ordered list from an array, places it after "previous element"
+ */
+function createOLFromArray(previousElement, array) {
+	createListFromArray(previousElement, array, "ol");
+}
+
+/*
+ * Creates a list from a given array and places it after a given element.
+ */
+function createListFromArray(previousElement, array, type) {
+	var newList = getList(type);
 	for (i in array) {
 		var element = array[i];
 		var li = document.createElement("li");
 		if(Array.isArray(element)) {
-			createULFromArray(ul.lastChild, element);
+			createListFromArray(newList.lastChild, element, type);
 		} else {
 			li.innerHTML = element;
-			ul.appendChild(li);
+			newList.appendChild(li);
 		}
 	}
-	previousElement.parentNode.insertBefore(ul, previousElement.nextSibling);
+	previousElement.parentNode.insertBefore(newList, previousElement.nextSibling);
 }
-			</code></pre>
-		</section>
-		<section>
-			<div class="float-text">
-				<p id="blueParagraph"> This is my blue paragraph and it is very, very happy.</p>
+
+/*
+ * Returns HTML list of given type
+ */
+function getList(type) {
+	switch(type){
+		case "ul":
+			return document.createElement("ul");
+		case "ol":
+			return document.createElement("ol");
+		default:
+			return null;
+	}
+}
+				</code></pre>
 			</div>
 		</section>
 
 		<!-- JavaScript Footer
 		================================================== -->
+		<!-- Personal Scripts -->
 		<script src="scripts/authentication.js"></script>
 		<script src="scripts/images.js"></script>
 
-		<!-- Bootstrap core JavaScript
-		================================================== -->
-	    <!-- Placed at the end of the document so the pages load faster -->
+		<!-- Prism: code syntax highlighting -->
+	    <script src="third-party/javascript/prism.js"></script>
+
+		<!-- Bootstrap core JavaScript -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	    <script src="third-party/javascript/bootstrap.min.js"></script>
+
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <script src="third-party/javascript/ie10-viewport-bug-workaround.js"></script>
 
@@ -171,8 +188,8 @@ function createULFromArray(previousElement, array) {
 			contains information displayed at the bottom of the page -->
 	<footer class="footer">
 		<!-- Contact Details -->
-			<div class="blurb">
-				<span><a class="line-header">Some Thoughts:</a> <a>I have no thoughts at the moment.</a> <address>xpcdev@gmail.com</address> </span>
+			<div class="blurb footer-text">
+				<span class="thought-head">Some Thoughts:</span> <span class="thought">have I no thoughts at the moment.</span> <address class="inline">xpcdev@gmail.com</address> </span>
 			</div>
 	</footer>
 </html>
