@@ -24,6 +24,12 @@ if(!localStorage.getItem('name')) {
  */
 function setUserName() {
 	var myName = prompt('Please enter your name.');
-	localStorage.setItem('name', myName);
-	userBanner.innerHTML = 'Hi, ' + myName + '!';
+	var greeter;
+	if(myName === null) {
+		greeter = 'Welcome, guest!';
+	} else {
+		localStorage.setItem('name', myName);
+		greeter = 'Hi, ' + myName + '!';
+	}
+	userBanner.innerHTML = greeter;
 }
