@@ -45,13 +45,12 @@
 
 		<!-- JavaScript Head
 		================================================== -->
+		<!-- Personal Scripts -->
 		<script src="/scripts/listHelper.js"></script>
+
 		<!-- jQuery: 
 				extended javascript functionality -->
 		<script src="/third-party/javascript/jquery.min.js"></script>
-		<!-- Prism: 
-				code syntax highlighting -->
-		<script type="text/javascript" src="/third-party/javascript/prism.min.js"></script>
 	</head>
 
 	<!-- HEADER
@@ -103,7 +102,7 @@
 					<p ><b>Code:</b></p>
 				</div>
 				<script type="text/javascript"> doneArray = ["foo", "bar", "baz", "<i>tes-style</i>", ["fus", "roh", "dah!"] ]; createULFromArray(doneBlurb, doneArray); </script>
-				<script> $("#createListFromArray").load("/content/javascript-files/create-list-from-array.html"); $.getScript('/third-party/javascript/prism.min.js'); </script>
+				<script> $("#createListFromArray").load("/content/javascript-files/create-list-from-array.html"); Prism.highlightAll(); </script>
 				<div id="createListFromArray"></div>
 			</div>
 		</section>
@@ -120,6 +119,9 @@
 
 	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	    <script src="/third-party/javascript/ie10-viewport-bug-workaround.js"></script>
+
+		<!-- Prism: code syntax highlighting -->
+		<script type="text/javascript" src="/third-party/javascript/prism.min.js"></script>
 
 	</body>
 
