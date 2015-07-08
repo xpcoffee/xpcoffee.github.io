@@ -43,10 +43,15 @@
 				It's one of the most used styling libraries and contains some
 				really nifty stuff.	-->
 
-		<!-- JavaScript Header
+		<!-- JavaScript Head
 		================================================== -->
 		<script src="/scripts/listHelper.js"></script>
+		<!-- jQuery: 
+				extended javascript functionality -->
 		<script src="/third-party/javascript/jquery.min.js"></script>
+		<!-- Prism: 
+				code syntax highlighting -->
+		<script type="text/javascript" src="/third-party/javascript/prism.min.js"></script>
 	</head>
 
 	<!-- HEADER
@@ -98,7 +103,7 @@
 					<p ><b>Code:</b></p>
 				</div>
 				<script type="text/javascript"> doneArray = ["foo", "bar", "baz", "<i>tes-style</i>", ["fus", "roh", "dah!"] ]; createULFromArray(doneBlurb, doneArray); </script>
-				<script> $(function(){$("#createListFromArray").load("/content/javascript-files/create-list-from-array.html"); }); </script>
+				<script> $("#createListFromArray").load("/content/javascript-files/create-list-from-array.html"); $.getScript('/third-party/javascript/prism.min.js'); </script>
 				<div id="createListFromArray"></div>
 			</div>
 		</section>
