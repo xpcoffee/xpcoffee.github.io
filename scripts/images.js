@@ -1,10 +1,10 @@
 /*
- * Author: 	Rick Bosch
- * email: 	xpc.dev@gmail.com 
+ * Author:  Rick Bosch
+ * email:   xpc.dev@gmail.com
  */
 
 // ###
-// # CONTENT 
+// # CONTENT
 
 // Image locations
 var myImage = document.getElementById('mainImage');
@@ -15,13 +15,13 @@ myImage.style.display = 'none';
 myImage.src = ninjaURL;
 
 // ###
-// # FUNTIONS 
+// # FUNTIONS
 
 // Dynamic
 function showNinja() {
-	if('none' === myImage.style.display) {
-		myImage.style.display = 'block';
-	} else {
-		myImage.style.display = 'none';
-	}
+    if('none' === myImage.style.display) {
+        myImage.style.display = 'block';
+    } else {
+        myImage.style.display = 'none';
+    }
 }

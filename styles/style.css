@@ -1,108 +1,108 @@
 /*tags*/
 
 html {
-	font-size: 10px;
-	font-family: 'Source Sans Pro', sans-serif;
+    font-size: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
-	width: auto;
-	min-width: 600px;
-	/*background-color: #222;*/
+    width: auto;
+    min-width: 600px;
+    /*background-color: #222;*/
 }
 
 section {
-	font-size: 16px;
-	line-height: 2;
-	letter-spacing: 1px;
-	padding: 0 20px 20px 20px;
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+    padding: 0 20px 20px 20px;
 }
 
 pre {
-	max-width: 800px;
-	margin: 0px auto;
+    max-width: 800px;
+    margin: 0px auto;
 }
 
 code {
-	font-size: initial;
-	margin: 10px auto;
+    font-size: initial;
+    margin: 10px auto;
 }
 code.innerHTML {
 }
 
 img {
-	display: block;
-	margin: 0 auto;
+    display: block;
+    margin: 0 auto;
 }
 
 h1 {
-	font-size: 60px;
-	margin: 0 auto;
-	padding: 20px 0;
-	text-align: center;
+    font-size: 60px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
 }
 
 h2 {
-	font-size: 24px;
-	text-align: center;
+    font-size: 24px;
+    text-align: center;
 }
 
 h3 {
-	font-size: 18px;
+    font-size: 18px;
 }
 
 header {
-	margin-bottom: 130px;
+    margin-bottom: 130px;
 }
 
 /*classes*/
 
 .pagelet {
-	background-color: white;
-	max-width: 1000px;
-	margin:20px auto 20px;
-	padding-top: 5px;
-	padding-bottom: 40px;
-	border-radius: 10px;
-	box-shadow: 0px 2px 6px #888888;	
+    background-color: white;
+    max-width: 1000px;
+    margin:20px auto 20px;
+    padding-top: 5px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px #888888;
 
 }
 
 .blurb {
-	max-width: 600px;
-	margin: 20px auto;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 .float-text {
-	max-width: 800px;
-	margin: 20px auto;
-	text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .inline {
-	display: inline;
+    display: inline;
 }
 
 .footer {
-	background: #222;
-	color: white; 
-	/* Set the fixed height of the footer here */
-	height: 50px;
-	width: 100%;
+    background: #222;
+    color: white;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    width: 100%;
 }
 
 .footer-text {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .thought-head, .thought {
-	color: #888;
+    color: #888;
 }
 
 .thought-head {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /*elements*/
@@ -113,18 +113,18 @@ header {
 }
 
 #bannerImage {
-	position: absolute;
-	left: 80px;
-	top: 80px;
+    position: absolute;
+    left: 80px;
+    top: 80px;
 }
 
 #blueParagraph {
-	color: blue;
+    color: blue;
 }
 
 #ninjaTag {
-	color: inherit;
-	text-decoration: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 

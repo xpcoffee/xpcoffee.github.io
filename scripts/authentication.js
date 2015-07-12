@@ -1,35 +1,35 @@
 /*
- * Author: 	Rick Bosch
- * email: 	xpc.dev@gmail.com 
+ * Author:  Rick Bosch
+ * email:   xpc.dev@gmail.com
  */
 
-// 	--------
-//	CONTENT 
-// 	--------
+//  --------
+//  CONTENT
+//  --------
 var userBanner = document.querySelector('#userBanner');
 
 // Check if there is a returning user
 if(!localStorage.getItem('name')) {
-	setUserName();
+    setUserName();
 } else {
-	var storedName = localStorage.getItem('name');
-	userBanner.innerHTML = 'Hey, ' + storedName + '!';
+    var storedName = localStorage.getItem('name');
+    userBanner.innerHTML = 'Hey, ' + storedName + '!';
 }
 
-// 	--------
-//	FUNCTIONS 
-// 	--------
+//  --------
+//  FUNCTIONS
+//  --------
 /*
  * Prompts user for a username.
  */
-function setUserName() {
-	var myName = prompt('Please enter your name.');
-	var greeter;
-	if(myName) {
-		localStorage.setItem('name', myName);
-		greeter = 'Hi, ' + myName + '!';
-	} else {
-		greeter = 'Welcome, guest!';
-	}
-	userBanner.innerHTML = greeter;
+ function setUserName() {
+    var myName = prompt('Please enter your name.');
+    var greeter;
+    if(myName) {
+        localStorage.setItem('name', myName);
+        greeter = 'Hi, ' + myName + '!';
+    } else {
+        greeter = 'Welcome, guest!';
+    }
+    userBanner.innerHTML = greeter;
 }
