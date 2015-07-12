@@ -108,7 +108,7 @@
                 </div>
                 <script type="text/javascript"> doneArray = ["foo", "bar", "baz", "<i>tes-style</i>", ["fus", "roh", "dah!"] ]; createULFromArray(doneBlurb, doneArray); </script>
                 <div id="createListFromArray"></div>
-                <script> $("#createListFromArray").load("/content/javascript-files/create-list-from-array.html", Prism.highlightAll());</script>
+                <script> $("#createListFromArray").load("/content/javascript-files/create-list-from-array.html", Prism.highlightElement(document.getElementById('js-list-from-array')));</script>
                 <script>  </script>
             </div>
         </section>
