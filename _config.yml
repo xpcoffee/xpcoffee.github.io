@@ -11,6 +11,6 @@ linkdin_username: emerickbosch
 
 # Build config
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-dinky
 plugins:
   - jekyll-feed
