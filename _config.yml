@@ -7,6 +7,7 @@ baseurl: ""
 url: "https://xpcoffee.github.io"
 twitter_username: xpcoffee
 github_username:  xpcoffee
+linkdin_username: emerickbosch
 
 # Build config
 markdown: kramdown
