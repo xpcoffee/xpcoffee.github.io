@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-I'm Emerick Bosch. I work as a software developer based in Cape Town, South Africa.
+Howzit! I'm Emerick Bosch. I work as a software developer based in Cape Town, South Africa.
 
-![profile](/assets/profile.png)
+<div><img style="height:150px; display:block; margin:50px 0 50px;" src="/assets/profile.png" /></div>
