@@ -1,26 +1,15 @@
+# Overall config
 title: xpcoffee
 email: xpc.dev@gmail.com
 description: >- 
   *shrug*
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://xpcoffee.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "https://xpcoffee.github.io"
 twitter_username: xpcoffee
 github_username:  xpcoffee
 
-# Build settings
+# Build config
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
