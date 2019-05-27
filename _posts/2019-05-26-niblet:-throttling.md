@@ -1,5 +1,3 @@
-# Niblet: Service/API Throttling
-
 **TLDR;** Throttling is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
 
 ## What problem does throttling address?
