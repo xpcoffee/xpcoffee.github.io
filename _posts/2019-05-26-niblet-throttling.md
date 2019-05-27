@@ -14,7 +14,7 @@ Secondly, *a service has no control over where requests come from*. An internet 
 
 When a large amount of requests hit a service unexpectedly, the service can become overwhelmed and crash/become unavailable.
 
-![](../assets/niblet-throttling-load.png)
+![](/assets/niblet-throttling-load.png)
 
 ## How does throttling help?
 
