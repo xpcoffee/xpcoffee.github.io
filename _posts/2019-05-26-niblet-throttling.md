@@ -20,7 +20,7 @@ When a large amount of requests hit a service unexpectedly, the service can beco
 
 In practice unexpected increases in load are often caused by single events, which have specific characteristics e.g. another system starts calling a _specific API_ very frequently; many people are linked to a _specific webpage_ from a popular post. This means that the problematic load can often be classified, and that can be exploited to protect the service: if you can find a way of grouping the problematic requests together, you can set a limit to how many of them the service should accept so that your service doesn't crash from an unexpected surge of requests. 
 
-This is **throttling**: a strategy where you classify requests and choose drop requests classes which have too many requests so that the service stays operational. This allows services to serve *some* problematic requests and *most/all* of the requests which fall outside the problematic group.
+This is **throttling**: a strategy where you classify requests and choose to ignore requests in classes which are overloaded. This allows a service to stay operational and serve *some* requests in overloaded classes as well as *most/all* other requests.
 
 ## How does throttling work?
 
