@@ -1,5 +1,5 @@
 ---
-title: "A niblet of: Throttling"
+title: "A niblet of&#58; Throttling"
 ---
 
 **TLDR;** Throttling is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
