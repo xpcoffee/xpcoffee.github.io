@@ -8,32 +8,33 @@ title: 'A niblet of: Throttling'
 
 Services have a critical problem, which arises from combining two facts:
 
-Firstly, *a service must do work for every request made against it*. e.g. a website render a webpage; an API fetches data from a database, filters and transforms it before sending it back. This work requires resources: the CPU works harder, more data is accessed from data-storage devices, etc. This means that there is a limit to the amount of work that a service can perform; there are a finite amount of requests that a service can serve. When a service reaches its limit, bad things happen: the service can misbehave in unexpected ways or crash altogether.
+Firstly, **a service must do work for every request made against it**. e.g. a website render a webpage; an API fetches data from a database, filters and transforms it before sending it back. This work requires resources: the CPU works harder, more data is accessed from data-storage devices, etc. This means that there is a limit to the amount of work that a service can perform; there are a finite amount of requests that a service can serve. When a service reaches its limit, bad things happen: the service can misbehave in unexpected ways or crash altogether.
 
-Secondly, *a service has no control over where requests come from*. An internet service is open to anyone that wants to call against them, at any time. So it is possible - and common - for a large amount of requests to hit a service without warning.
+Secondly, **a service has no control over where requests come from**. An internet service is open to anyone that wants to call against them, at any time. So it is possible - and common - for a large amount of requests to hit a service without warning.
 
-When a large amount of requests hit a service unexpectedly, the service can become overwhelmed and crash/become unavailable.
+When a large amount of requests hit a service unexpectedly, this causes a "load spike" on the service, which can become overwhelmed and crash/become unavailable.
 
-![](/assets/niblet-throttling-load.png)
+<img src="/assets/niblet-throttling-without-throttling.png" alt="without-throttling">
 
 ## How does throttling help?
 
-In practice unexpected increases in load are often caused by single events, which have specific characteristics e.g. another system starts calling a _specific API_ very frequently; many people are linked to a _specific webpage_ from a popular post. This means that the problematic load can often be classified, and that can be exploited to protect the service: if you can find a way of grouping the problematic requests together, you can set a limit to how many of them the service should accept so that your service doesn't crash from an unexpected surge of requests. 
+In practice, events which cause load spikes often have what I'll call a **focus-point** e.g. a user started calling _the bank statement API_ very frequently; a surge in traffic happened when users were linked to _the SpaceCat webpage_ from a popular Reddit post. Focus points allow us to classify problematic load: we can distinguish traffic going to _the SpaceCat webpage_ to traffic going to other pages on the website. Once classified, requests can isolated and limited to prevent the service from being overloaded and to allow other requests to be served normally.
 
-This is **throttling**: a strategy where you classify requests and choose to ignore requests in classes which are overloaded. This allows a service to stay operational and serve *some* requests in overloaded classes as well as *most/all* other requests.
+<img src="/assets/niblet-throttling-with-throttling.png" alt="with-throttling">
 
-## How does throttling work?
+So, what do we need to do to throttle? We need 4 things:
 
-To throttle, you need 4 things:
+1. **An axis** - This is another name for a class/category of requests. We'll need an algorithm or mechanism for categorizing requests. Example axes are the a user's account ID; the type of request; the specific API method which the request is calling against; a resource which the request is attempting to access. 
+1. **An aggregation** - we need some way of turning requests in an axis into a number that we can set a limit on. We'll need an algorithm for this aggregation. Example aggregations are the number of requests; the amount of results that the requests would return; the total amount of bits that the requests would send back.
+1. **A period** over which to perform one aggregation. 
+1. **A limit/threshold** to set on the aggregation.
 
-1. Some way of categorizing requests. The category is sometimes called a throttling "*axis*". There's no one way to do this, these depend on the service. Example axes are the account-number of the request; the type of request; specific API method which the request is calling against. 
-2. Some way of *aggregating* the requests in an axis. Again, there's no one way to do this. Example aggregations are the number of requests; the amount of results that the requests would return; the total amount of bits that the requests would send back.
-3. *A period* for one aggregation. 
-4. *A limit/threshold*.
+Example: Throttle calls when `user12314` (axis) downloads more than 750MB of data (aggregation and limit) in 10 seconds (period).
 
-When the *aggregation* for an *axis* crosses the *threshold* for a *time period*, the service denies requests for that axis until the aggregation drops back below the threshold. Every request that hits the service triggers the calculation and check against the threshold. In larger systems, with hundreds of axes and aggregations, a dedicated system can handle throttling exclusively.
+<img src="/assets/niblet-throttling-example.png" alt="with-throttling">
 
-## When does throttling not help?
+
+## What are the limitations of throttling?
 
 Throttling looses some effectiveness when the axes are badly chosen or if demand hits every axis. In these cases, combining requests across axes could still be more than the service can handle.
 
