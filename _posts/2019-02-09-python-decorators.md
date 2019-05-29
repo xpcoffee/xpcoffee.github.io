@@ -3,14 +3,15 @@ layout: post
 title:  "Python Decorators"
 date:   2019-02-09 17:32:56 +0200
 categories: dev python decorators
+summary: Decorators offer a way to re-use functionality via composition. Here's a step-by-step introduction to them in Python.
 ---
 
-*This was [originially posted on Wordpress](https://xpcoffee.wordpress.com/2017/09/23/python-decorators/), but it lives here now.*
+Decorators are one of many ways to pull out and re-use common functionality. In particular, they allow you to wrap functionality.
 
-## Some context
-Decorators are one of many ways to pull out and re-use common functionality from functions. In particular, they are useful if you need to re-use stuff that happens before and after your function.
+![](/assets/decorator-burger.svg)
 
-## An example would be logging.
+
+## A logging example
 
 Without a decorator:
 
@@ -111,6 +112,7 @@ post
 It works! We now have a way re-using our pre- and post-function logic.
 
 ### Wrap the function definition
+
 Looking at the above implementation, we have usability problem. It’d be a pain to have to wrap our function calls with call_with_logging everywhere in our code-base.
 
 Instead of wrapping the function when calling, lets wrap the function definition:
@@ -211,4 +213,6 @@ Doing the thing well
 [SAFE] post
 ```
 
-That’s it! You can now decorate your functions with reckless abandon.
+That’s it! You can now decorate your functions with wild abandon.
+
+> *This was [originially posted on Wordpress](https://xpcoffee.wordpress.com/2017/09/23/python-decorators/); but it lives here now.*
