@@ -4,7 +4,7 @@ email: xpc.dev@gmail.com
 description: >- 
   ☕ ⌨️ ⚙️
 baseurl: ""
-title_image: "/assets/xpcoffee.svg"
+title_image: "https://xpcoffee.github.io/assets/xpcoffee.svg"
 url: "https://xpcoffee.github.io"
 twitter_username: explodedcoffee
 github_username:  xpcoffee
