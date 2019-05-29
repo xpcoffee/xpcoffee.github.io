@@ -2,7 +2,6 @@
 layout: post
 title:  "Selectors"
 date:   2019-04-01 17:00:00 +0200
-categories: development react selectors
 ---
 
 Selectors are [pure functions](https://en.wikipedia.org/wiki/Pure_function) that take in state and return a subset and/or transformed view of the state - they "select" part of the store.

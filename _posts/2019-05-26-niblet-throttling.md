@@ -2,7 +2,6 @@
 layout: post
 title:  'A niblet - Request throttling'
 date:   2019-05-26 23:00:00 +0200
-categories: service system resiliency throttling rate-limiting retry
 summary: Request throttling is the act of selectively refusing requests to protect a system from being overwhelmed by demand.
 ---
 
