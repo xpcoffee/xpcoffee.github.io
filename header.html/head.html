@@ -15,7 +15,11 @@
 
     <!-- Twitter cards -->
     <meta name="twitter:site"    content="@{{ site.twitter_username }}">
+    {% if page.image %}
     <meta name="twitter:title"   content="{{ page.title }}">
+    {% else %}
+    <meta name="twitter:title"   content="{{ site.title }}">
+    {% endif %}
 
     {% if page.summary %}
     <meta name="twitter:description" content="{{ page.summary }}">
@@ -26,9 +30,11 @@
     {% if page.image %}
     <meta name="twitter:card"  content="summary">
     <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+    aaaaaaa
     {% else %}
+    aaaaaaa
     <meta name="twitter:card"  content="summary">
-    <meta name="twitter:image" content="{{ site.image }}">
+    <meta name="twitter:image" content="{{ site.main_image }}">
     {% endif %}
     <!-- end of Twitter cards -->
 
