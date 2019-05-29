@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  'A niblet of: Throttling'
+title:  'A niblet - Request throttling'
 date:   2019-05-26 23:00:00 +0200
-categories: development react selectors rate-limiting
+categories: service system resiliency throttling rate-limiting retry
+summary: Request throttling is the act of selectively refusing requests to protect a system from being overwhelmed by demand.
 ---
 
 **TLDR;** API/request/service `throttling` (a.k.a `rate limiting`) is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
