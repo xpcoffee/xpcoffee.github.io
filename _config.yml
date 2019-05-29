@@ -4,14 +4,18 @@ email: xpc.dev@gmail.com
 description: >- 
   ☕ ⌨️ ⚙️
 baseurl: ""
-title_image: "https://xpcoffee.github.io/assets/xpcoffee.svg"
+image: "https://xpcoffee.github.io/assets/xpcoffee.png"
 url: "https://xpcoffee.github.io"
 twitter_username: explodedcoffee
 github_username:  xpcoffee
 linkdin_username: emerickbosch
 
-# Build config
 markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 theme: minima
 plugins:
   - jekyll-feed
