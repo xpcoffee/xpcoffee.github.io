@@ -2,11 +2,7 @@
 layout: default
 ---
 
-<link rel="stylesheet" type="text/css" href="/assets/index.css">
-
 <div class="home">
-    <img class="title-image" src="/assets/xpcoffee.svg">
-
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Ideas" }}</h2>
     <ul class="post-list">
