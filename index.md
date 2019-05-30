@@ -2,27 +2,22 @@
 layout: default
 ---
 
+<small>This is my site. It's fragile; please treat it gently. =)</small>
+
 <div class="home">
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Ideas" }}</h2>
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
+        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.summary | no summary - I was lazy ¯\_(ツ)_/¯ }}">
+          {{ post.title | escape }}
+        </a>
+        <span class="post-meta">[{{ post.tags | join: "] [" }}]</span>
       </li>
       {%- endfor -%}
     </ul>
 
-    <p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">Subscribe</a></p>
+    <small><p class="feed-subscribe"><svg class="svg-icon orange"><use xlink:href="{{ '/assets/minima-social-icons.svg#rss' | relative_url }}"></use></svg><a href="{{ "/feed.xml" | relative_url }}">RSS</a></p></small>
   {%- endif -%}
 
 </div>
