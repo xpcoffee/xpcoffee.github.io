@@ -6,7 +6,7 @@ summary: Programming style where void methods instead return a reference to the 
 tags: [development,pattern,style]
 ---
 
-If you find yourself writing a lot of [void]("Methods with no return signature") methods, you can find yourself with code that looks like this:
+If you find yourself writing a lot of <a title="Methods with no return signature">void</a> methods, you can find yourself with code that looks like this:
 
 ```typescript
 class SandwichDrone {
