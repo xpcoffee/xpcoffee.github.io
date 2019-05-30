@@ -30,7 +30,8 @@ title:    Tags
 _Index of tags across all posts._
 
 {% for tag in tags %}
-[[{{ tag }}]](#{{ tag }})<br>
+{% assign anchor = tag | replace: " ", "-" %}
+[[{{ tag }}]](#{{ anchor }})<br>
 {%- endfor -%}
 
 {% for tag in tags %}
