@@ -3,6 +3,7 @@ layout: post
 title:  "Python Decorators"
 date:   2019-02-09 17:32:56 +0200
 summary: Decorators offer a way to re-use functionality via composition. Here's a step-by-step introduction to them in Python.
+tags: [python,pattern,development,reusability]
 ---
 
 Decorators are one of many ways to pull out and re-use common functionality. In particular, they allow you to wrap functionality.
