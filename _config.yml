@@ -1,21 +1,18 @@
 # Overall config
 title: xpcoffee
-email: xpc.dev@gmail.com
+author: Rick Bosch
 description: >- 
   ☕ ⌨️ ⚙️
 baseurl: ""
 main_image: https://xpcoffee.github.io/assets/xpcoffee.png
 url: "https://xpcoffee.github.io"
-twitter_username: explodedcoffee
-github_username:  xpcoffee
-linkedin_username: emerickbosch
-author: Emerick Bosch
+social:
+  twitter: explodedcoffee
+  github:  xpcoffee
+  linkedin: emerickbosch
+  email: xpc.dev@gmail.com
 
 markdown: kramdown
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 
 theme: minima
 plugins:
