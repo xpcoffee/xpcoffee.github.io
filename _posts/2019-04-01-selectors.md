@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Selectors"
+title:  Selectors
 date:   2019-04-01 17:00:00 +0200
-summary: In systems with centralized state, selectors are pure functions that deal with filtering and transforming data so that components don't have to.
+summary: 'In systems with centralized state, selectors are pure functions that deal with filtering and transforming data so that components don't have to.'
 tags: [pattern,react,development,separation of concerns]
 ---
 
