@@ -1,7 +1,7 @@
 
 <header class="site-header">
-
   <link rel="stylesheet" type="text/css" href="/assets/index.css">
+  <link rel="stylesheet" href="{{ "/assets/prism.css" | prepend: site.baseurl }}">
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
@@ -32,4 +32,5 @@
 
     <div class="title-image-container"><div><img class="title-image" src="/assets/xpcoffee.svg"></div></div>
   </div>
+
 </header>
