@@ -69,7 +69,7 @@ do_the_thing('quickly')
 
 undo_the_thing('carefully')
 ```
-```text
+```
 # output
 [SAFE] pre
 This is a safe operation. Doing the thing quickly
@@ -102,7 +102,7 @@ def call_with_logging(fn, *fn_args, **fn_kwargs):
 # call our function using the wrapper
 call_with_logging(do_the_thing, 'well')
 ```
-```text
+```
 # output
 pre
 Doing the thing well
@@ -137,7 +137,7 @@ def do_the_thing(manner):
 decorated_fn = decorate(do_the_thing)
 decorated_fn('well')
 ```
-```text
+```
 # output
 pre
 Doing the thing well
@@ -164,7 +164,7 @@ Now that we have annotated our function, we can call it directly and the annotat
 ```python
 do_the_thing('well')
 ```
-```text
+```
 # output
 pre
 Doing the thing well
