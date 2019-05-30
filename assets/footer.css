@@ -1,0 +1,13 @@
+.footer-flex {
+    display: flex; 
+    align-items: center; 
+    justify-items: center;
+}
+
+.column-1 {
+    flex-grow: 1;
+}
+
+.column-2 {
+    flex-grow: 2;
+}
