@@ -9,7 +9,7 @@ layout: default
     <ul class="post-list">
       {%- for post in site.posts -%}
       <li>
-        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.summary | no summary - I was lazy ¯\_(ツ)_/¯ }}">
+        <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.summary }}">
           {{ post.title | escape }}
         </a>
         <span class="post-meta">[{{ post.tags | join: "] [" }}]</span>
