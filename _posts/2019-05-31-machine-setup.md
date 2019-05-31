@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Work machine setup
+title: Machine setup
 summary: How I get back up and running on a freshly formatted machine.
 tags: [playbook,ubuntu,linux,setup]
+permalink: machine-setup
 ---
 
 I format my machine often; I like getting back to a clean slate and I also make a lot of mistakes which kill the machine. This is my playbook that helps me get back up and running.

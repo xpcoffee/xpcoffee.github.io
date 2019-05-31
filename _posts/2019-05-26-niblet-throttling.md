@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  'A niblet - Request throttling'
-date:   2019-05-26 23:00:00 +0200
 summary: Request throttling is the act of selectively refusing requests to protect a system from being overwhelmed by demand.
 tags: [niblet,distributed systems,resiliency,reliability,algorithm]
+permalink: a-niblet-of-throttling
 ---
 
 **TLDR;** API/request/service `throttling` (a.k.a `rate limiting`) is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
