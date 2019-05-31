@@ -4,19 +4,15 @@ title: About
 permalink: /about/
 ---
 
-<link rel="stylesheet" type="text/css" href="/assets/about.css">
-
-Howzit! I'm Emerick Bosch. I work as a software developer based in [Cape Town, South Africa](https://goo.gl/maps/p36KxpFtzGt).
-
-<table style="border:none;">
-    <tr>
-        <td><img class ="avatar" title="that's me" src="/assets/profile.png" /> </td>
-        <td>
-            <img class="avatar" title="Cape Town, South Africa" src="/assets/cpt.png" /><br>
-            <span class="attribute-to">
+<div class="flex-vertical space-between">
+    <div class="flex center-off-axis">
+        <img class ="mask-round small-pic" title="that's me" src="/assets/profile.png" />
+        <div class="flex-vertical vertical-items-center">
+            <div><img class="mask-round margin-bottom small-pic" title="Cape Town, South Africa" src="/assets/cpt.png"/></div>
+            <span class="subscript">
             Picture all rights reserved to <a href="https://www.instagram.com/goku_explores/">Gokul Nair <svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#instagram' | relative_url }}"></use></svg></a>
             </span>
-        </td>
-    </tr>
-<table>
-
+        </div>
+    </div>
+    <p class="margin-top center-off-axis">I'm Rick Bosch. I work as a software developer based in <a href="https://goo.gl/maps/p36KxpFtzGt">Cape Town, South Africa</a>.</p>
+</div>

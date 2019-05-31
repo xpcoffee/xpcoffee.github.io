@@ -1,27 +1,22 @@
 <footer class="site-footer h-card">
-    <link rel="stylesheet" type="text/css" href="/assets/footer.css">
     <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
     <div class="wrapper">
-
-        <div class="footer-col-wrapper footer-flex">
-            <div class="column-1"></div>
-            <div class="column-1">
+        <div class="flex grey-text space-between">
+            <div class="flex-vertical">
                 <h2 class="footer-heading">{{ site.title | escape }}</h2>
                 <p>{{ site.description | escape }}</p>
             </div>
-            <div class="column-1">
+            <div class="flex-vertical vertical-items-center">
                 <p>Got feedback? Talk to me!</p>
                 <a href="https://twitter.com/{{ site.social.twitter | cgi_escape | escape }}" title="{{ site.social.twitter | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg> @{{ site.social.twitter | cgi_escape | escape }}</a>
             </div>
-            <div class="social-links column-1">
-
+            <div class="flex-vertical">
                 <ul class="contact-list">
                     <li class="p-name">{{ site.author | escape }}</li>
                     <li><a href="https://github.com/{{ site.social.github | cgi_escape | escape }}" title="{{ site.social.github | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> {{ site.social.github}}</a></li>
                     <li><a href="https://www.linkedin.com/in/{{ site.social.linkedin | cgi_escape | escape }}" title="{{ site.social.linkedin | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg> {{ site.social.linkedin }}</a></li>
                 </ul>
-
             </div>
         </div>
     </div>
