@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  'A niblet - Request throttling'
+title:  'Request throttling'
 summary: Request throttling is the act of selectively refusing requests to protect a system from being overwhelmed by demand.
-tags: [niblet,distributed systems,resiliency,reliability,algorithm]
-permalink: a-niblet-of-throttling
+tags: [distributed systems,resiliency,reliability,algorithm]
+permalink: request-throttling
 ---
 
-**TLDR;** API/request/service `throttling` (a.k.a `rate limiting`) is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
+**TLDR;** `Request throttling` (a.k.a `rate limiting`/`API throttling`/`server-side throttling`) is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
 
 ## Service overload
 
@@ -21,14 +21,14 @@ There are 2 core ideas to consider when thinking about a service's ability to se
 
 A spike in demand against the service will often cause a spike in the resource usage/load on the service. These spikes can occur at any time and - if the service is not prepared or protected - the resulting "load spike" on the service can overwhelm and take down the service.
 
-<img src="/assets/niblet-throttling-without-throttling.png" alt="without-throttling">
+<img src="/assets/without-throttling.png" alt="without throttling">
 
 ## Selectively shedding load
 
 In practice, events which cause load spikes often have what I'll call a `focus point` e.g. a load spike event was caused when users were linked to the [prancing piglet][piglet] page from a popular Reddit post. Focus points allow us to classify problematic load: we can distinguish traffic going to [prancing piglet][piglet] page from traffic going to other pages on the website. Once classified, we can limit the amount of requests we serve for a particular class, hopefully preventing the service from being overloaded.
 
 [piglet]: https://imgur.com/gallery/FsKMWiJ
-<img src="/assets/niblet-throttling-with-throttling.png" alt="with-throttling">
+<img src="/assets/with-throttling.png" alt="with throttling">
 
 So, what do we need to do to throttle? We need 4 things:
 
@@ -39,7 +39,7 @@ So, what do we need to do to throttle? We need 4 things:
 
 `Example:` We decide to throttle calls when user12314 (axis) downloads more than 750MB of data (aggregation and limit) in 10 seconds (period).
 
-<img src="/assets/niblet-throttling-example.png" alt="with-throttling">
+<img src="/assets/throttling-example.png" alt="throttling example">
 
 
 ## Limitations
@@ -54,7 +54,7 @@ We've looked at throttling from the service's side. Let's take a quick look at i
 
 **What do I do with a throttled response?** When receiving a throttling exception, the best thing is to wait - to give the service some time to recover - then retry the same request. This is called `backoff and retry`. There are multiple ways to do this, but a good general-purpose algorithm is [exponential backoff and retry](https://cloud.google.com/storage/docs/exponential-backoff).
 
-## Still hungry for more on the topic?
+## Read on
 
  - Article: [Go full throttle: The essentials of throttling in your application architecture](https://developer.ibm.com/articles/mw-1705-phillips/) - A more in-depth introduction to throttling.
  - Video: [Approaches for application request throttling](https://www.youtube.com/watch?v=Q53eR7mFsRo) - Conference talk iteratively implementing a throttling solution.
