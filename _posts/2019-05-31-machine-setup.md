@@ -119,6 +119,8 @@ Generate a [new SSH key](https://help.github.com/en/articles/generating-a-new-ss
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
+Install [`jq`](https://stedolan.github.io/jq/ "JSON manipulation tool")
+
 ## Multimedia
 
 Install [Inkscape](https://snapcraft.io/inkscape "intuitive Vector illustrator for linux")
