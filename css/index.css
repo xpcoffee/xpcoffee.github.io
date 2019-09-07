@@ -15,7 +15,7 @@
     max-height: 40px;
 }
 
-.margin-left{
+.margin-left {
     margin-left: 1em;
 }
 
@@ -53,7 +53,7 @@
 
 .location {
     align-self: flex-end;
-    display:flex;
+    display: flex;
     flex-flow: column;
     justify-content: center;
 }
@@ -87,4 +87,42 @@
 
 .space-between-vertical {
     align-items: space-between;
+}
+
+
+/* Tooltip container */
+
+.tooltip {
+    /* color: #828282; */
+    text-decoration: none;
+    border-bottom: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(255, 240, 174) 100%);
+    border-radius: 3px;
+    padding-left: 2px;
+    right: 0;
+}
+
+
+/* Tooltip text */
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover:after {
+    content: attr(data-tooltip);
+    background-color: rgba(240, 240, 255);
+    color: #474747;
+    z-index: 1;
+    font-size: small;
+    font-family: monospace;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    min-width: 300px;
+    margin: 0.3em;
 }
