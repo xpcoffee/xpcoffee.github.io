@@ -122,7 +122,12 @@
     padding-bottom: 5px;
     border-radius: 6px;
     position: absolute;
-    left: 0;
+    text-decoration: none;
+    right: auto;
+    bottom: auto;
+    transform: translateX(-50%) scale(1)!important;
+    left: 50%;
+    top: 100%;
     min-width: 300px;
     margin: 0.3em;
 }
