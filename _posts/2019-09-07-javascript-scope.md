@@ -2,7 +2,7 @@
 layout: post
 title:  'JavaScript scope'
 summary: A quick overview of scope in javascript.
-tags: [javascript,fundamentals]
+tags: [javascript]
 permalink: javascript-scope
 ---
 
