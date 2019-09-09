@@ -6,7 +6,7 @@ tags: [development,pattern,style]
 permalink: method-chaining
 ---
 
-If you find yourself writing a lot of <a title="Methods with no return signature">void</a> methods, you can find yourself with code that looks like this:
+If you find yourself writing a lot of <span class="tooltip" data-tooltip="Methods that don't return a value">void methods</span>, you can find yourself with code that looks like this:
 
 ```typescript
 class SandwichDrone {

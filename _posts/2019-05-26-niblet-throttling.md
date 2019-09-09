@@ -6,7 +6,7 @@ tags: [distributed systems,resiliency,reliability,algorithm]
 permalink: request-throttling
 ---
 
-**TLDR;** `Request throttling` (a.k.a `rate limiting`/`API throttling`/`server-side throttling`) is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
+**TLDR;** <span class="tooltip" data-tooltip="a.k.a rate limiting/API throttling/server-side throttling">Request throttling</span> is the act of selectively refusing requests to protect a service from being overwhelmed by demand.
 
 ## Service overload
 
