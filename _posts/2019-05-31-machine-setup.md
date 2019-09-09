@@ -82,12 +82,6 @@ Set up workplace directory
 cd $HOME && mkdir Workplace
 ```
 
-Set up [thefuck](https://github.com/nvbn/thefuck#installation "quick correction of incorrect commands")
-
-```bash
-sudo apt update && sudo apt install python3-dev python3-pip python3-setuptools && sudo pip3 install thefuck
-```
-
 Set up [base16 shell](https://github.com/chriskempson/base16-shell "commands for quickly changing terminal themes")
 
 ```bash
