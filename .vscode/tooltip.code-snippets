@@ -1,0 +1,10 @@
+{
+	"tooltip": {
+		"scope": "markdown,md",
+		"prefix": "tooltip",
+		"body": [
+			"<span class=\"tooltip\" data-tooltip=\"$2\">$1</span>"
+		],
+		"description": "Insert a tooltip"
+	}
+}
