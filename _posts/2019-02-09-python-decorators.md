@@ -214,5 +214,3 @@ Doing the thing well
 ```
 
 That’s it! You can now decorate your functions with wild abandon.
-
-> *This was [originially posted on Wordpress](https://xpcoffee.wordpress.com/2017/09/23/python-decorators/); but it lives here now.*
