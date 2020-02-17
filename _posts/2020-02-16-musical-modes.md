@@ -2,7 +2,7 @@
 layout: post
 title:  'Musical modes'
 summary: A reference sheet for the 7 musical modes
-tags: [music theory, reference, scales, intervals]
+tags: [music theory]
 permalink: musical-modes
 ---
 
@@ -27,7 +27,7 @@ T - Tone
 | **VII** | **Locrian**                 |  `s`  |   T   |   T   |  `s`  |   T   |   T   |   T   |
 
 Starting with the major scale (the Ionian), we find out the difference between each scale degree. That gives a pattern of tones and semitones.
-By "shifting" the order of the pattern, we end up with other scales. These scales are called **modes**.
+By "shifting" the order of the pattern, we end up with other scales. These scales are called **modes**. Each mode has a different feel/flavour to it, from happy (Ionian), to sad (Ionian), to exotic (Phrygian), to dissonant (Locrian).
 
 **Example** We get the Phrygian mode/scale by shifting the pattern of the Ionan up by 2.
 
@@ -45,6 +45,8 @@ By "shifting" the order of the pattern, we end up with other scales. These scale
 
 # Intervals
 
+Overview of what intervals are in scale.
+
 | *Mode*  | *Mode name*                 |                tonic                |                 m2                  |                 M2                  |                 m3                  |                 M3                  |              perfect 4              |           tritone (#4/♭5)           |              perfect 5              |                 m6                  |                 M6                  |                 m7                  |                 M7                  |               octave                | *shortcut to help remember* |
 | ------- | --------------------------- | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :---------------------------------: | :-------------------------: |
 | **I**   | **Ionian (major)**          | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> | <i class="fas fa-check-circle"></i> |           majors            |
@@ -55,7 +57,7 @@ By "shifting" the order of the pattern, we end up with other scales. These scale
 | **VI**  | **Aeolian (natural minor)** | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |         minors, M2          |
 | **VII** | **Locrian**                 | <i class="fas fa-check-circle"></i> | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |                                     | <i class="fas fa-check-circle"></i> |         minors,  ♭5         |
 
-# Triads patterns
+# Triad patterns
 
 These are the chords you end up with when constructing triads that start at each scale degree and use only the notes from the scale.
 
@@ -73,3 +75,7 @@ M - major triad
 | **VI**  | **Aeolian (natural minor)** |   m   |  dim  |   M   |   m   |   m   |   M   |   M   |
 | **VII** | **Locrian**                 |  dim  |   M   |   m   |   m   |   M   |   M   |   m   |
 
+Observations:
+
+ - There are 2 consecutive major chords in each mode. Their position w.r.t the root chord (a.k.a the I chord) is a good sign of what mode we're playing in. **e.g.** If your 1 chord is major and you play a major 7 chord, you're in Myxolidian. If your 1 and 2 chords are Major, you're in Lydian.
+ - There are 3 major chords, even in minor scales. By focussing on them, it's possible to still play major/"happy" sounding chords, while allowing someone to solo using a minor scale. **e.g.** In Aeolian, you can focus on the 3, 6 and 7 chords, all of which are major, alongside with the minor 1 chord to make a more uplifting chord progression, despite being in the minor key.
