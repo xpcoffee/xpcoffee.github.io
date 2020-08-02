@@ -12,3 +12,7 @@ pre, code {
     max-width: -webkit-calc(1000px - (30px * 2));
     max-width: calc(1000px - (30px * 2));
 }
+
+h1, h2, h3, h4, h5, h6, .post-link {
+    font-weight: 300;
+}
