@@ -10,6 +10,11 @@ Many bugs in programming arise from a misunderstanding of how scope is structure
 
 **Scope** is the "stuff" that's available to a line of code at the time it gets executed. It encompasses what that it can access (available variables/references), and what it can do (the functions it can call and how it's allowed to call them). Another name for scope could be the "execution context" of a specific line of code.
 
+- [References](#references)
+- [Types of scope in JavaScript](#types-of-scope-in-javascript)
+  - [Variable declaration with block scope](#variable-declaration-with-block-scope)
+- [Lexical scoping](#lexical-scoping)
+- [Closure](#closure)
 
 ## References
 
