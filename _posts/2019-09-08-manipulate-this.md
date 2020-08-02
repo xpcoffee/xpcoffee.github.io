@@ -10,40 +10,138 @@ permalink: manipulate-this
 
 **The `this` reference can be manipulated** for functions by using their `call`, `apply` and `bind` methods. Knowing how to use these opens up powerful ways to share functionality between classes and objects.
 
-The following gives a quick intro for each:
+Here's a quick intro for each:
 
-<p class="codepen" data-height="510" data-theme-id="dark" data-default-tab="js,result" data-user="xpcoffee" data-slug-hash="eYOKvNr" data-preview="true" style="height: 510px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Introduction to call, apply and bind">
-  <span>See the Pen <a href="https://codepen.io/xpcoffee/pen/eYOKvNr/">
-  Introduction to call, apply and bind</a> by Rick Bosch (<a href="https://codepen.io/xpcoffee">@xpcoffee</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+```javascript
+/**
+ * We define a function with logic that we want to share at runtime.
+ */
+function greet(name, surname) {
+    console.log(`${this.greeting}, ${name} ${surname}! ${this.howAreYou}`);
+}
 
-------
+/**
+ * We define some objects that can make use of that functionality.
+ */
+const english = {
+    greeting: "Good morning",
+    howAreYou: "How are you?"
+}
 
-## Practical examples
+const french = {
+    greeting: "Bonjour",
+    howAreYou: "Comment allez-vous?"
+}
 
-Here we'll look at some practical uses where manipulating `this` can be useful.
+const afrikaans = {
+    greeting: "Gooie more",
+    howAreYou: "Hoe gaan dit?"
+}
 
-### bind
+/** 
+ * call -  Invokes the function directly. 
+ * 
+ * first param: the object that "this" should refer to
+ * params thereafter: function parameters
+ */
+greet.call(english, "Tom", "Tomsington");
 
-**Returning a bound function** allows us to execute the function outside of objects as if it were still in the object. 
+/** 
+ * apply - Invokes the method directly. It's very similar to the call method. 
+ * 
+ * first param: the object that "this" should refer to
+ * second param: an array of function parameters
+ */
+greet.apply(french, ["Stephanie", "de Monaco"])
 
-Usually, [closures capture scope which functions need][javascript_scope], but closures do not lock down what `this` refers to. We need bind when using `this` in functions that we pass around so that its value does not fluctuate as the interpreter changes the ThisBinding.
+/** bind - Prepares the function, such that it can be called later. 
+ * 
+ * first param: the object that "this" should refer to
+ * params thereafter: [optional] function parameters. This **partially** populates parameters. Useful when parameters don't change. 
+ */
+const afrikaansGreeting = greet.bind(afrikaans, "Jaco")
 
-<p class="codepen" data-height="510" data-theme-id="dark" data-default-tab="js,result" data-user="xpcoffee" data-slug-hash="NWKzdwG" data-preview="true" style="height: 510px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Returning a bound function">
-  <span>See the Pen <a href="https://codepen.io/xpcoffee/pen/NWKzdwG/">
-  Returning a bound function</a> by Rick Bosch (<a href="https://codepen.io/xpcoffee">@xpcoffee</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+// We can now call with the prepared function with the remaining parameters
+afrikaansGreeting("van de Merwe"); 
+afrikaansGreeting("van Niekerk");
+afrikaansGreeting("van die Spruitriviersfontein");
+```
+
+## Practical example using bind
+
+Here we'll look at a situation where manipulating `this` can be useful.
+
+The core idea is that **returning a bound function** allows us to use methods of an object outside of those objects. 
+
+Usually, [closures capture scope which functions need][javascript_scope], but closures do not lock down what `this` refers to. Since `this` is frequently used within object methods, we need a method of binding `this` so that the method can still work even when it is passed around without its object.
+
+```javascript
+/** Class returning an unbound function **/
+class Passerby {
+    constructor(name) {
+        this.name = name;
+        console.log("Hello! I am " + this.name);
+    }
+
+    rememberMe() {
+        // return a function making use of "this"
+        return function() {
+            console.log("I remember " + this.name + "!");
+        }
+    }
+}
+const rememberJohn = new Passerby("John").rememberMe();
+
+try {
+  /**
+   * When we call the function here, the "this" reference has changed:
+   * we no longer reference the object; instead we're referencing the 
+   * global execution context. There is no "name" in the global context,
+   * so an error occurs. 
+   */
+  rememberJohn();
+} catch(e) {
+  console.log("I can't quite recall who that was...");
+}
+
+
+/** Class returning a bound function **/
+class Friend {
+    constructor(name) {
+        this.name = name;
+        console.log("Hello! I am " + this.name);
+    }
+
+    // return a bound function making use of "this"
+    rememberMe() {        
+        const remember = function() {
+            console.log("I remember " + this.name + "!");
+        }
+        return remember.bind(this);
+    }
+}
+
+const rememberEmily = new Friend("Emily").rememberMe();
+
+try {
+  /**
+   * Because the function has been "bound" to our Friend object, 
+   * "this" still references "emily", and we can successfully log 
+   * out the name 
+   */
+  rememberEmily();
+} catch(e) {
+  console.log("I can't quite recall who that was...");
+}
+```
 
 --- 
 
 ## TODO 
-* applying functions to objects you don't control
-* sharing methods with other objects
-* caveats - these methods can be strong vectors for the the [feature envy codesmell](https://blog.codinghorror.com/code-smells/)
+
+* Applying functions to objects you don't control
+* Sharing methods with other objects
+* Caveats - these methods can be strong vectors for the the [feature envy codesmell](https://blog.codinghorror.com/code-smells/)
 
 [this_binding_so]:https://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work
 [jsbin_intro]:https://jsbin.com/tipevoj/2/edit?js,console
