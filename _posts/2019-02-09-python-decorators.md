@@ -6,10 +6,8 @@ tags: [python,pattern,development,reusability]
 permalink: python-decorators
 ---
 
-Decorators are one of many ways to pull out and re-use common functionality. In particular, they allow you to wrap functionality.
-
-![](/assets/decorator-burger.svg)
-
+Decorators are one of many ways to pull out and re-use common functionality. In particular, they use a wrapping pattern to apply common functionality to other bits of code.
+Python provides a low-effort way to create decorators using annotations. This page goes through the exercies of setting up this kind of decorator from first principals.
 
 ## A logging example
 
