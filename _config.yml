@@ -16,8 +16,10 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# disable rouge highlighter
-highlighter: none
+# Can't currently disable the rouge highlighter in GitHub pages. Re-disable once we can.
+# https://docs.github.com/en/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites#invalid-highlighter-language
+# highlighter: none
+
 markdown: kramdown
 kramdown:
    syntax_highlighter_opts:
