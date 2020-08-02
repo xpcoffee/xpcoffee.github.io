@@ -6,14 +6,13 @@ tags: [javascript]
 permalink: javascript-scope
 ---
 
-Getting scope wrong is a source of a _lot_ of issues in JavaScript. This is a (non-exhaustive) cheatsheet with some of the key aspects.
+Misunderstanding scope is a source of a _lot_ of issues in JavaScript. This is a (non-exhaustive) cheatsheet with some of the key aspects.
 
 ## Lexical scoping
 
-JavaScript is lexically scoped: <span class="tooltip" data-tooltip="This is important. Scope accesses references to functions or objects, not the objects or functions themselves.">**references to variables or functions**</span> are accessible to the scope in which they are define <span class="tooltip" data-tooltip="JavaScript does 'scope chaining': if a reference cannot be found in the current scope, it will try to look in the parent scope to find it. This continues until the outermost scope is reached.">**and all nested scopes**. 
+JavaScript is lexically scoped: <span class="tooltip" data-tooltip="This is important. Scope accesses references to functions or objects, not the objects or functions themselves.">**references to variables or functions**</span> are accessible to the scope in which they are defined <span class="tooltip" data-tooltip="JavaScript does 'scope chaining': if a reference cannot be found in the current scope, it will try to look in the parent scope to find it. This continues until the outermost scope is reached.">**and all nested scopes**. 
 
 ```javascript
-
 function createAFunctionScope() {
     /* we're in a function scope */
 

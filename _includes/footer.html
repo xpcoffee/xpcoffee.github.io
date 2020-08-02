@@ -9,17 +9,29 @@
             </div>
             <div class="flex-vertical vertical-items-center">
                 <p>Got feedback? Talk to me!</p>
-                <a href="https://twitter.com/{{ site.social.twitter | cgi_escape | escape }}" title="{{ site.social.twitter | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg> @{{ site.social.twitter | cgi_escape | escape }}</a>
+                <a href="https://twitter.com/{{ site.social.twitter | cgi_escape | escape }}"
+                    title="{{ site.social.twitter | escape }}"><svg class="svg-icon grey">
+                        <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
+                    </svg> @{{ site.social.twitter | cgi_escape | escape }}</a>
             </div>
             <div class="flex-vertical">
                 <ul class="contact-list">
                     <li class="p-name">{{ site.author | escape }}</li>
-                    <li><a href="https://github.com/{{ site.social.github | cgi_escape | escape }}" title="{{ site.social.github | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> {{ site.social.github}}</a></li>
-                    <li><a href="https://www.linkedin.com/in/{{ site.social.linkedin | cgi_escape | escape }}" title="{{ site.social.linkedin | escape }}"><svg class="svg-icon grey"><use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg> {{ site.social.linkedin }}</a></li>
+                    <li><a href="https://github.com/{{ site.social.github | cgi_escape | escape }}"
+                            title="{{ site.social.github | escape }}"><svg class="svg-icon grey">
+                                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+                            </svg> {{ site.social.github}}</a></li>
+                    <li><a href="https://www.linkedin.com/in/{{ site.social.linkedin | cgi_escape | escape }}"
+                            title="{{ site.social.linkedin | escape }}"><svg class="svg-icon grey">
+                                <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+                            </svg> {{ site.social.linkedin }}</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <script src="{{ "/js/prism.js" | prepend: site.baseurl }}"></script>
+
+    <link rel="stylesheet" href="/css/hightlightjs-atom-one-light.css">
+    <script src="/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 </footer>
