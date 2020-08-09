@@ -15,7 +15,7 @@ Here's a way to think of things with the intent on finding the best way to be un
 
 <br>
 
-**Conclusion:** the most effective way to evolve and make progress both individually and as a species is is to internalize that you will be wrong and to actively change your behaviour to improve. 
+The most advanced form of evolution is the ability of an individual to self-correct. For this to be effective, one needs to consciously acknowledge that you will often be wrong and that one needs to actively seek to constantly tweak their own behaviour to adapt to new information if they are to improve. 
 
 <br>
 
