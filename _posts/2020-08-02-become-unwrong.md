@@ -3,7 +3,7 @@ layout: post
 title:  'Becoming unwrong'
 summary: A thought exercise on course correction and humility.
 tags: [philosophy]
-permalink: discord-bot
+permalink: becoming-unwrong
 ---
 
 
