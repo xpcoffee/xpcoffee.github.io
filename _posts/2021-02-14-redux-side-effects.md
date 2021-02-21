@@ -48,7 +48,7 @@ At a conceptual level, we need three things to make this happen:
 2. A way to trigger these processes from within the Redux app. We already have the concept of actions that components can dispatch that we could expand on i.e. we can define new type of action that can specifically trigger side-effectful processes.
 3. A way to feed the results of the processes back into the app. One relatively simple solution for this (and the one we'll assume here) is to use normal Redux actions to deliver the payload back to our app.
 
-<img src="/assets/redux-side-effect-conceptual-structure.png" width="650px">
+<img src="/assets/redux-side-effect-conceptual-structure.png" width="800px">
 
 ## Implementations of side-effectful structures
 
