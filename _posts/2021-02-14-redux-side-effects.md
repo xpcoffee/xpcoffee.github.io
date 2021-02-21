@@ -22,11 +22,11 @@ Redux apps broadly have the following structure:
 -   Components emit actions (events) when the guests of the app interacts with them. These actions can also carry payloads e.g. an action for user input can have the input string as a payload.
 -   Events are observed by Redux, which maps the action to a reducer function. The reducer function processes the action and determines how this action should affect the state. The resulting state is given back to Redux, which merges the result into a new version of the application state.
 
-<img src="/assets/redux-structure.png" width="800px" />
+<img src="/assets/redux-structure.png" width="650px" />
 
 For this discussion we can simplify this conceptual model to drop the internal Redux bits.
 
-<img src="/assets/redux-structure-simplified.png" width="800px" />
+<img src="/assets/redux-structure-simplified.png" width="500px" />
 
 The central advantage of this structure is that our app can be deterministic: you can be sure of how the application will behave if it's in a certain state. This is a property we want to keep. In fact this is so important that [it is the principal motivation behind Redux](https://redux.js.org/understanding/thinking-in-redux/motivation); if we lost this property, we practically drop the primary advantage for using Redux.
 
@@ -48,7 +48,7 @@ At a conceptual level, we need three things to make this happen:
 2. A way to trigger these processes from within the Redux app. We already have the concept of actions that components can dispatch that we could expand on i.e. we can define new type of action that can specifically trigger side-effectful processes.
 3. A way to feed the results of the processes back into the app. One relatively simple solution for this (and the one we'll assume here) is to use normal Redux actions to deliver the payload back to our app.
 
-<img src="/assets/redux-side-effect-conseptual-structure.png" width="800px">
+<img src="/assets/redux-side-effect-conceptual-structure.png" width="650px">
 
 ## Implementations of side-effectful structures
 
