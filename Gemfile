@@ -30,4 +30,4 @@ gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 # Ensure Kramdown is set higher than version of known vulnerability
 # https://github.com/advisories/GHSA-mqm2-cgpr-p4m6
-gem "kramdown", ">= 2.3.0"
+# gem "kramdown", ">= 2.3.0"
