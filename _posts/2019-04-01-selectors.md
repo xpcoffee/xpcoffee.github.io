@@ -2,7 +2,7 @@
 layout: post
 title: Selectors
 summary: "In systems with centralized state, selectors are pure functions that deal with filtering and transforming data so that components don't have to."
-tags: [pattern, react, development, separation of concerns, selectors]
+tags: [pattern, react, development, software architecture]
 permalink: selectors
 ---
 

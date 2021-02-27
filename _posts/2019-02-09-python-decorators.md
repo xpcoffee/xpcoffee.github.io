@@ -2,7 +2,7 @@
 layout: post
 title: "Python Decorators"
 summary: Decorators offer a way to re-use functionality via composition. Here's a step-by-step introduction to them in Python.
-tags: [python,pattern,development,reusability]
+tags: [python, pattern, development]
 permalink: python-decorators
 ---
 
@@ -18,7 +18,7 @@ def do_the_thing():
     print('[SAFE] pre')
     # logic
     print('[SAFE] post')
- 
+
 def undo_the_thing():
     print('[MAY CAUSE IMPACT] pre')
     # logic
@@ -30,11 +30,11 @@ With a decorator:
 ```python
 # <define @with_logging>
 # I'll explain how to do this later
- 
+
 @with_logging('SAFE')
 def do_the_thing():
     #logic
- 
+
 @with_logging('MAY CAUSE IMPACT')
 def undo_the_thing():
     #logic
@@ -47,26 +47,27 @@ def with_logging(risk):
     def decorate_function(fn):
         def call_with_logging(*fn_args, **fn_kwargs):
             print('[{0}] pre'.format(risk))
- 
+
             fn_result = fn(*fn_args, **fn_kwargs)
- 
+
             print('[{0}] pre'.format(risk))
             return fn_result
         return call_with_logging
     return decorate_function
- 
-@with_logging('SAFE') 
+
+@with_logging('SAFE')
 def do_the_thing(manner):
     print('This is a safe operation. Doing the thing {0}'.format(manner))
- 
-@with_logging('MAY CAUSE IMPACT') 
+
+@with_logging('MAY CAUSE IMPACT')
 def undo_the_thing():
     print('This may cause impact. Undoing the thing {0}'.format(manner))
- 
+
 do_the_thing('quickly')
 
 undo_the_thing('carefully')
 ```
+
 ```
 # output
 [SAFE] pre
@@ -78,9 +79,11 @@ This may cause impact. Undoing the thing carefully
 ```
 
 ## Step by step
+
 Let’s run through the thought process that gets us to the complete example.
 
 ### Wrap the function call
+
 We have a function:
 
 ```python
@@ -96,10 +99,11 @@ def call_with_logging(fn, *fn_args, **fn_kwargs):
     print('pre')
     fn(*fn_args, **fn_kwargs)
     print('post')
- 
+
 # call our function using the wrapper
 call_with_logging(do_the_thing, 'well')
 ```
+
 ```
 # output
 pre
@@ -123,18 +127,19 @@ def decorate(fn):
         print('pre')
         fn(*fn_args, **fn_kwargs)
         print('post')
- 
+
     # return our new, decorated function
     return decorated_function
- 
+
 # define the function containing our logic
 def do_the_thing(manner):
     print('Doing the thing {0}'.format(manner))
- 
+
 # decorate and call our function
 decorated_fn = decorate(do_the_thing)
 decorated_fn('well')
 ```
+
 ```
 # output
 pre
@@ -162,6 +167,7 @@ Now that we have annotated our function, we can call it directly and the annotat
 ```python
 do_the_thing('well')
 ```
+
 ```
 # output
 pre
@@ -197,13 +203,14 @@ def with_logging(risk):
             return fn_result
         return wrap_function_call
     return decorate_function
- 
-@with_logging('SAFE') 
+
+@with_logging('SAFE')
 def do_the_thing(manner):
     print('Doing the thing {0}'.format(manner))
- 
+
 do_the_thing('well')
 ```
+
 ```
 # output
 [SAFE] pre

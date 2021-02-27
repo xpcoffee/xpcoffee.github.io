@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  'Serverless website with CDN Auth'
+title: "Serverless website with CDN Auth"
 summary: An architectural pattern for a serverless website that performs authentication and authorization in front of the CDN.
-tags: [serverless,pattern,architecture,authentication,authorization,cloud services,distributed systems]
+tags: [pattern, system architecture]
 permalink: serverless-website-with-cdn-auth
 ---
 
@@ -18,10 +18,10 @@ The idea is to put some <a title="ability to run code">compute</a> in front of y
 
 Here are some real-world building blocks:
 
-- [AWS Lambda@Edge](https://docs.aws.amazon.com/lambda/latest/dg/lambda-edge.html) for compute.
-- [Amazon CloudFront](https://aws.amazon.com/cloudfront/) for theCDN.
-- [Amazon Cognito](https://aws.amazon.com/cognito/) for authentication and authorization.
-- [Amazon S3 static-website bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) to host the static website & its assets.
+-   [AWS Lambda@Edge](https://docs.aws.amazon.com/lambda/latest/dg/lambda-edge.html) for compute.
+-   [Amazon CloudFront](https://aws.amazon.com/cloudfront/) for theCDN.
+-   [Amazon Cognito](https://aws.amazon.com/cognito/) for authentication and authorization.
+-   [Amazon S3 static-website bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) to host the static website & its assets.
 
 The compute and CDN come together, but other than that, you can swap out any component for another equivalent (e.g. you could replace Lambda@Edge and CloudFront with CloudFlare Workers and CDN respectively).
 

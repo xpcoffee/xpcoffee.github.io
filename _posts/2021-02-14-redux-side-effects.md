@@ -2,7 +2,7 @@
 layout: post
 title: "Side effects in Redux"
 summary: Cursory looks into why side-effects are hard in Redux and some implementations that tackle these challenges.
-tags: [redux, architecture]
+tags: [redux, software architecture, library, pattern]
 permalink: redux-side-effects
 ---
 

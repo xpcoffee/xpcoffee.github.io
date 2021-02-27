@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'Method chaining'
+title: "Method chaining"
 summary: Programming style where void methods instead return a reference to the object, allowing another method to be called immediately.
-tags: [development,pattern,style]
+tags: [development, pattern]
 permalink: method-chaining
 ---
 

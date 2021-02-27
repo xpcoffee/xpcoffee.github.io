@@ -2,7 +2,7 @@
 layout: post
 title: Machine setup
 summary: How I get back up and running on a freshly formatted machine.
-tags: [playbook,ubuntu,linux,setup]
+tags: [playbook, linux]
 permalink: machine-setup
 ---
 
@@ -12,9 +12,9 @@ I format my machine often (I make a lot of mistakes which kill the machine and I
 
 Install <span class="tooltip" data-tooltip="Chrome with a bunch of extra, useful functionality">[Vivaldi](https://vivaldi.com/)</span>
 
-- [lastpass](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
-- [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
-- [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
+-   [lastpass](https://chrome.google.com/webstore/detail/lastpass-free-password-ma/hdokiejnpimakedhajhdlcegeplioahd)
+-   [Vimium](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
+-   [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
 
 ## Work
 
