@@ -77,6 +77,10 @@
     color: #828282;
 }
 
+.large-text {
+    font-size: 1.1em;
+}
+
 .vertical-items-center {
     align-items: center;
 }
@@ -89,6 +93,34 @@
     align-items: space-between;
 }
 
+.subtext {
+    color: #828282;
+}
+
+.relative {
+    position: relative;
+}
+
+.sticky {
+    position: sticky;
+    top: 0.5em;
+}
+
+.margin-left {
+    margin-left: 0.5em;
+}
+
+.margin-top {
+    margin-top: 0.5em;
+}
+
+.no-list {
+    list-style-type: none;
+}
+
+.thin-width {
+    max-width: 800px;
+}
 
 /* Tooltip container */
 
@@ -101,7 +133,6 @@
     padding-left: 2px;
     right: 0;
 }
-
 
 /* Tooltip text */
 
@@ -125,7 +156,7 @@
     text-decoration: none;
     right: auto;
     bottom: auto;
-    transform: translateX(-50%) scale(1)!important;
+    transform: translateX(-50%) scale(1) !important;
     left: 50%;
     top: 100%;
     min-width: 300px;
