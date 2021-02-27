@@ -87,9 +87,9 @@ With this approach, the components only know about _actions_. The sagas and the 
 
 Benefits of this approach:
 
--   Components can be kept simple. All the added complexity of side-effects is encapsulated in sagas. This is useful for both code re-use (components can be shared without)
+-   Components can be kept simple. All the added complexity of side-effects is encapsulated in sagas. This is useful for code reuse as a component can be re-used in a different context where its actions are mapped to other sagas.
 -   redux-saga can decide when to run a saga. This allows it to provide optimizations e.g. only run a saga for the latest action rather than for every action. This can save a lot of time/prevent bugs if you were to implement this yourself.
--   Sagas and components can be tested independently; components tests can focus on testing that the correct actions are dispatched.
+-   Sagas and components can be tested independently; components tests can focus on testing that the correct actions are dispatched. This separation of concerns can allow you to have simple component tests (which are expensive relative to normal unit tests); not having side effects in components means you don't have to re-render the component and account for potentially asynchronous logic. Alongside this, the trickier side-effectful logic can be tested using normal javascript unit tests.
 
 Downsides of this approach:
 
